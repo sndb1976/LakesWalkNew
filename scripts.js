@@ -33,26 +33,13 @@ const imagesByYearAndSubfolder = {
     // Add other years similarly
 };
 
-// Function to show subfolders (Wales, UK) for the selected year
-function showSubfolders(year) {
-    const walkImagesContainer = document.getElementById("walkImages");
-    walkImagesContainer.innerHTML = '';  // Clear previous images
+// Function to toggle the visibility of subfolders
+function toggleSubfolders(year) {
+    const subfolderList = document.getElementById(`subfolders-${year}`);
+    const isVisible = subfolderList.style.display === "block";
 
-    const subfolders = Object.keys(imagesByYearAndSubfolder[year]);
-    if (subfolders) {
-        subfolders.forEach(subfolder => {
-            const subfolderLink = document.createElement('a');
-            subfolderLink.href = '#';
-            subfolderLink.innerHTML = subfolder;
-            subfolderLink.onclick = function () {
-                showImages(year, subfolder);  // Show images from the selected subfolder
-            };
-
-            // Add the subfolder link to the container
-            walkImagesContainer.appendChild(subfolderLink);
-            walkImagesContainer.appendChild(document.createElement('br'));  // Add a line break for separation
-        });
-    }
+    // Toggle display
+    subfolderList.style.display = isVisible ? "none" : "block";
 }
 
 // Function to show images for the selected year and subfolder
