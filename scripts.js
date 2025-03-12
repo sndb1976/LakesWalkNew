@@ -3,9 +3,9 @@ function showImages(year) {
     // Define image paths for each year
     const imagesByYear = {
         '2017': [
-            'images/2017/Yorkshire3Peaks/walk1.jpg',
-            'images/2017/Yorkshire3Peaks/walk1-2.jpg',
-            'images/2017/Yorkshire3Peaks/walk1-3.jpg',
+            'images/2017/walk1.jpg',
+            'images/2017/walk1-2.jpg',
+            'images/2017/walk1-3.jpg',
         ],
         '2018': [
             'images/2018/walk1.jpg',
