@@ -1,14 +1,9 @@
-// Example for a simple interaction: smooth scroll to the top of the page
-document.addEventListener('DOMContentLoaded', () => {
-    const backToTopButton = document.createElement('button');
-    backToTopButton.textContent = "Back to Top";
-    backToTopButton.style.position = 'fixed';
-    backToTopButton.style.bottom = '20px';
-    backToTopButton.style.right = '20px';
-    backToTopButton.style.padding = '10px';
-    document.body.appendChild(backToTopButton);
+function showImages(walkId) {
+    // Hide all the images first
+    const allWalks = document.querySelectorAll('.walk-images');
+    allWalks.forEach(walk => walk.style.display = 'none');
 
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-});
+    // Show the selected walk images
+    const selectedWalk = document.getElementById(walkId);
+    selectedWalk.style.display = 'block';
+}
