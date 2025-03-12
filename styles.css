@@ -40,6 +40,11 @@ body {
     text-decoration: underline;
 }
 
+.subfolder-list {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
 .walk-images {
     display: flex;
     flex-wrap: wrap;
@@ -63,7 +68,7 @@ body {
 }
 
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 1;
     padding-top: 100px;
