@@ -3,57 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LakesWalk - Explore Scenic Walks</title>
+    <title>LakesWalk</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to LakesWalk</h1>
-        <p>Explore the most scenic walks around the lakes!</p>
-    </header>
 
     <div class="container">
         <div class="sidebar">
+            <h2>Walk Images</h2>
             <ul>
-                <li><a href="#" onclick="showImages('lakeview')">2017</a></li>
-                <li><a href="#" onclick="showImages('mountain')">Mountain Path</a></li>
-                <li><a href="#" onclick="showImages('forest')">Forest Loop</a></li>
+                <li><a href="#" onclick="showImages('2017')">2017</a></li>
+                <li><a href="#" onclick="showImages('2018')">2018</a></li>
+                <li><a href="#" onclick="showImages('2019')">2019</a></li>
+                <li><a href="#" onclick="showImages('2020')">2020</a></li>
+                <li><a href="#" onclick="showImages('2021')">2021</a></li>
+                <li><a href="#" onclick="showImages('2022')">2022</a></li>
+                <li><a href="#" onclick="showImages('2023')">2023</a></li>
+                <li><a href="#" onclick="showImages('2024')">2024</a></li>
             </ul>
         </div>
 
-        <div class="main-content">
-            <div id="lakeview" class="walk-images">
-                <h2>2017</h2>
-                <div class="carousel">
-                    <img src="images/walk1.jpg" alt="Lakeview Trail 1">
-                    <img src="images/walk1-2.jpg" alt="Lakeview Trail 2">
-                    <img src="images/walk1-3.jpg" alt="Lakeview Trail 3">
-                </div>
-            </div>
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage" />
+            <div id="modalCaption"></div>
+        </div>
 
-            <div id="mountain" class="walk-images">
-                <h2>Mountain Path</h2>
-                <div class="carousel">
-                    <img src="images/walk2.jpg" alt="Mountain Path 1">
-                    <img src="images/walk2-2.jpg" alt="Mountain Path 2">
-                    <img src="images/walk2-3.jpg" alt="Mountain Path 3">
-                </div>
-            </div>
-
-            <div id="forest" class="walk-images">
-                <h2>Forest Loop</h2>
-                <div class="carousel">
-                    <img src="images/walk3.jpg" alt="Forest Loop 1">
-                    <img src="images/walk3-2.jpg" alt="Forest Loop 2">
-                    <img src="images/walk3-3.jpg" alt="Forest Loop 3">
-                </div>
-            </div>
+        <div class="walk-images" id="walkImages">
+            <!-- Images will be dynamically injected here based on the year clicked -->
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2025 LakesWalk. All Rights Reserved.</p>
-    </footer>
 
     <script src="scripts.js"></script>
 </body>
