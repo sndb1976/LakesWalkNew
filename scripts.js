@@ -13,14 +13,8 @@ function showImages(year) {
         '2019': [
             'images/2019/walk1.jpg',
         ],
-        '2020': [
-            'images/2020/walk1.jpg',
-        ],
         '2021': [
             'images/2021/walk1.jpg',
-        ],
-        '2022': [
-            'images/2022/walk1.jpg',
         ],
         '2023': [
             'images/2023/walk1.jpg',
