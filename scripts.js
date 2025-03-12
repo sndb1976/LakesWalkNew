@@ -6,6 +6,7 @@ function showImages(year) {
             'images/2017/Yorkshire3Peaks/walk1.jpg',
             'images/2017/Yorkshire3Peaks/walk1-2.jpg',
             'images/2017/Yorkshire3Peaks/walk1-3.jpg',
+            'images/2017/Yorkshire3Peaks/walk1-4.jpg',
         ],
         '2018': [
             'images/2018/lakeview/walk1.jpg',
