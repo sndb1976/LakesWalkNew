@@ -57,6 +57,11 @@ header p {
     color: #0056b3;
 }
 
+.sidebar a.active {
+    color: #0056b3;
+    font-weight: bold;
+}
+
 .main-content {
     flex-grow: 1;
     padding: 20px;
@@ -66,8 +71,14 @@ header p {
 }
 
 .walk-images {
-    display: none; /* Hide all walk images by default */
-    margin-bottom: 30px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.walk-images.show {
+    display: block;
+    opacity: 1;
 }
 
 .walk-images h2 {
@@ -81,6 +92,46 @@ header p {
     margin: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.walk-images img:hover {
+    transform: scale(1.1); /* Zoom-in effect when hovering over an image */
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.carousel img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.carousel-controls {
+    text-align: center;
+}
+
+.carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-controls button:disabled {
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: not-allowed;
 }
 
 footer {
