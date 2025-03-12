@@ -12,25 +12,40 @@
         <p>Explore the most scenic walks around the lakes!</p>
     </header>
 
-    <section class="walks">
-        <div class="walk">
-            <img src="Images/walk1.jpg" alt="Scenic Walk 1">
-            <h2>Lakeview Trail</h2>
-            <p>A peaceful walk around a beautiful lake, ideal for nature lovers.</p>
+    <div class="container">
+        <!-- Left Sidebar for Walks -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="#" onclick="showImages('lakeview')">Lakeview Trail</a></li>
+                <li><a href="#" onclick="showImages('mountain')">Mountain Path</a></li>
+                <li><a href="#" onclick="showImages('forest')">Forest Loop</a></li>
+            </ul>
         </div>
 
-        <div class="walk">
-            <img src="Images/walk2.jpg" alt="Scenic Walk 2">
-            <h2>Mountain Path</h2>
-            <p>Enjoy a challenging trail with breathtaking views of the mountains.</p>
-        </div>
+        <!-- Main Content Area for Images -->
+        <div class="main-content">
+            <div id="lakeview" class="walk-images">
+                <h2>Lakeview Trail</h2>
+                <img src="images/walk1.jpg" alt="Lakeview Trail 1">
+                <img src="images/walk1-2.jpg" alt="Lakeview Trail 2">
+                <img src="images/walk1-3.jpg" alt="Lakeview Trail 3">
+            </div>
 
-        <div class="walk">
-            <img src="Images/walk3.jpg" alt="Scenic Walk 3">
-            <h2>Forest Loop</h2>
-            <p>Take a relaxing walk through dense woods, perfect for a calm day.</p>
+            <div id="mountain" class="walk-images">
+                <h2>Mountain Path</h2>
+                <img src="images/walk2.jpg" alt="Mountain Path 1">
+                <img src="images/walk2-2.jpg" alt="Mountain Path 2">
+                <img src="images/walk2-3.jpg" alt="Mountain Path 3">
+            </div>
+
+            <div id="forest" class="walk-images">
+                <h2>Forest Loop</h2>
+                <img src="images/walk3.jpg" alt="Forest Loop 1">
+                <img src="images/walk3-2.jpg" alt="Forest Loop 2">
+                <img src="images/walk3-3.jpg" alt="Forest Loop 3">
+            </div>
         </div>
-    </section>
+    </div>
 
     <footer>
         <p>&copy; 2025 LakesWalk. All Rights Reserved.</p>
