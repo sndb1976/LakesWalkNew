@@ -1,3 +1,4 @@
+/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
@@ -25,32 +26,61 @@ header p {
     font-size: 1.2em;
 }
 
-.walks {
+.container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.walk {
+.sidebar {
+    width: 250px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 1.2em;
+}
+
+.sidebar a:hover {
+    color: #0056b3;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 15px;
-    padding: 15px;
-    width: 30%;
-    text-align: center;
 }
 
-.walk img {
+.walk-images {
+    display: none; /* Hide all walk images by default */
+    margin-bottom: 30px;
+}
+
+.walk-images h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.walk-images img {
     width: 100%;
+    max-width: 300px;
+    margin: 10px;
     border-radius: 8px;
-    height: 200px;
-    object-fit: cover;
-}
-
-.walk h2 {
-    font-size: 1.5em;
-    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 footer {
