@@ -15,12 +15,12 @@ const imagesByYearAndSubfolder = {
     },
     "2019": {
         "Helvellyn": [
-            'images/2019/Wales/walk1.jpg',
-            'images/2019/Wales/walk1-2.jpg'
+            'images/2019/Helvellyn/walk1.jpg',
+            'images/2019/Helvellyn/walk1-2.jpg'
         ],
         "Old Man": [
-            'images/2019/UK/walk1.jpg',
-            'images/2019/UK/walk1-2.jpg'
+            'images/2019/Old Man/walk1.jpg',
+            'images/2019/Old Man/walk1-2.jpg'
         ]
     },
     // Add other years similarly
