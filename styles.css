@@ -6,13 +6,31 @@ body {
     padding: 0;
 }
 
-/* Container for Sidebar & Images */
-.container {
-    display: flex;
-    height: 100vh;
+/* Header Styles */
+header {
+    text-align: center;
+    background: linear-gradient(to right, #ff512f, #dd2476);
+    padding: 20px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Sidebar Styles */
+h1 {
+    margin: 0;
+}
+
+/* Sidebar & Content */
+.container {
+    display: flex;
+    height: 90vh;
+}
+
+/* Sidebar */
 .sidebar {
     width: 250px;
     background: #333;
@@ -53,7 +71,7 @@ body {
     background: #666;
 }
 
-/* Dropdown for Years */
+/* Dropdown Effect */
 .sidebar ul li ul {
     display: none;
     margin-left: 15px;
@@ -63,7 +81,7 @@ body {
     display: block;
 }
 
-/* Walk Images Section */
+/* Walk Images */
 .walk-images {
     flex: 1;
     padding: 20px;
@@ -85,7 +103,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Image Modal */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -96,6 +114,7 @@ body {
     background: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .modal img {
@@ -113,7 +132,18 @@ body {
     cursor: pointer;
 }
 
-/* Responsive Adjustments */
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
