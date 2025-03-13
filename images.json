@@ -1,0 +1,23 @@
+import os
+import json
+
+image_data = {}
+
+base_path = "images"  # Update if your folder structure is different
+
+for year in os.listdir(base_path):
+    year_path = os.path.join(base_path, year)
+    if os.path.isdir(year_path):
+        image_data[year] = {}
+        for location in os.listdir(year_path):
+            location_path = os.path.join(year_path, location)
+            if os.path.isdir(location_path):
+                image_data[year][location] = [
+                    file for file in os.listdir(location_path)
+                    if file.endswith(('.jpg', '.png', '.jpeg'))
+                ]
+
+with open("images.json", "w") as json_file:
+    json.dump(image_data, json_file, indent=4)
+
+print("images.json created successfully!")

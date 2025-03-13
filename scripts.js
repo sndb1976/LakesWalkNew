@@ -19,8 +19,13 @@ const imagesByYearAndSubfolder = {
             'images/2019/Helvellyn/walk1-2.jpg'
         ],
         "Coniston Old Man": [
+<<<<<<< HEAD
             'images/2019/Old-Man/walk1.jpg',
-            'images/2019/Old-Man/walk1-2.jpg'
+            'images/2019/Old-Man/walk1-2.jpg',
+=======
+            'images/2019/Old Man/walk1.jpg',
+            'images/2019/Old Man/walk1-2.jpg'
+>>>>>>> 69a07cf27cde402711aa418bd863391b76926e79
         ]
     },
     // Add other years similarly
@@ -36,21 +41,26 @@ function toggleSubfolders(year) {
 }
 
 // Function to show images for the selected year and subfolder
-function showImages(year, subfolder) {
-    const walkImagesContainer = document.getElementById("walkImages");
-    walkImagesContainer.innerHTML = '';  // Clear previous images
 
-    const images = imagesByYearAndSubfolder[year][subfolder];
-    if (images) {
-        images.forEach(image => {
-            const imgElement = document.createElement('img');
-            imgElement.src = image;
-            imgElement.alt = `${subfolder} walk in ${year}`;
-            imgElement.onclick = function () {
-                openModal(image);  // Open modal on click
-            };
-            walkImagesContainer.appendChild(imgElement);
-        });
+async function showImages(year, location) {
+    let container = document.getElementById("walkImages");
+    container.innerHTML = "";
+
+    try {
+        let response = await fetch("images.json"); // Load pre-generated JSON file
+        let data = await response.json();
+
+        if (data[year] && data[year][location]) {
+            data[year][location].forEach(file => {
+                let img = document.createElement("img");
+                img.src = `images/${year}/${location}/${file}`;
+                img.alt = `Image from ${location}`;
+                img.classList.add("walk-image");
+                container.appendChild(img);
+            });
+        }
+    } catch (error) {
+        console.error("Error loading images:", error);
     }
 }
 
