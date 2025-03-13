@@ -19,8 +19,13 @@ const imagesByYearAndSubfolder = {
             'images/2019/Helvellyn/walk1-2.jpg'
         ],
         "Coniston Old Man": [
+<<<<<<< HEAD
             'images/2019/Old-Man/walk1.jpg',
             'images/2019/Old-Man/walk1-2.jpg',
+=======
+            'images/2019/Old Man/walk1.jpg',
+            'images/2019/Old Man/walk1-2.jpg'
+>>>>>>> 69a07cf27cde402711aa418bd863391b76926e79
         ]
     },
     // Add other years similarly
