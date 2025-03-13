@@ -1,81 +1,69 @@
-// Object for images organized by year and subfolder
-const imagesByYearAndSubfolder = {
-    "2017": {
-        "3 Peaks": [
-            'images/2017/3 Peaks/walk1.jpg'
-        ]
-    },
-    "2018": {
-        "Not Sure": [
-            'images/2018/Not Sure/walk1.jpg',
-        ],
-        "Paterdale": [
-            'images/2018/Paterdale/walk1.jpg',
-        ]
-    },
-    "2019": {
-        "Paterdale Helvellyn": [
-            'images/2019/Helvellyn/walk1.jpg',
-        ],
-        "Coniston Old Man": [
-        ]
-    },
-    // Add other years similarly
-};
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script loaded.");
 
-// Function to toggle the visibility of subfolders
-function toggleSubfolders(year) {
-    const subfolderList = document.getElementById(`subfolders-${year}`);
-    const isVisible = subfolderList.style.display === "block";
+    // Close modal on clicking the close button or outside the image
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalCaption = document.getElementById("modalCaption");
 
-    // Toggle display
-    subfolderList.style.display = isVisible ? "none" : "block";
-}
-
-// Function to show images for the selected year and subfolder
-
-async function showImages(year, location) {
-    let container = document.getElementById("walkImages");
-    container.innerHTML = "";
-
-    try {
-        let response = await fetch("images.json"); // Load pre-generated JSON file
-        let data = await response.json();
-
-        if (data[year] && data[year][location]) {
-            data[year][location].forEach(file => {
-                let img = document.createElement("img");
-                img.src = `images/${year}/${location}/${file}`;
-                img.alt = `Image from ${location}`;
-                img.classList.add("walk-image");
-                container.appendChild(img);
-            });
-        }
-    } catch (error) {
-        console.error("Error loading images:", error);
-    }
-}
-
-// Modal code to display the full-size image
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("modalImage");
-const captionText = document.getElementById("modalCaption");
-
-function openModal(imageSrc) {
-    modal.style.display = "block";
-    modalImg.src = imageSrc;
-    captionText.innerHTML = imageSrc;
-}
-
-// Close the modal when the user clicks the close button
-const closeBtn = document.getElementsByClassName("close")[0];
-closeBtn.onclick = function () {
-    modal.style.display = "none";
-}
-
-// Close the modal when the user clicks outside of the modal content
-window.onclick = function (event) {
-    if (event.target === modal) {
+    document.querySelector(".close").addEventListener("click", function () {
         modal.style.display = "none";
-    }
+    });
+
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+
+/**
+ * Function to dynamically load images from a selected folder.
+ * @param {string} year - The year of the walk.
+ * @param {string} location - The location (subfolder under the year).
+ */
+function showImages(year, location) {
+    console.log(`Loading images for ${year}/${location}...`);
+    const imageContainer = document.getElementById("walkImages");
+    imageContainer.innerHTML = ""; // Clear previous images
+
+    // Construct path to JSON file containing image filenames
+    const jsonFilePath = `images/${year}/${location}/images.json`;
+
+    fetch(jsonFilePath)
+        .then(response => response.json())
+        .then(imageFiles => {
+            if (imageFiles.length === 0) {
+                imageContainer.innerHTML = "<p>No images found.</p>";
+                return;
+            }
+
+            imageFiles.forEach(filename => {
+                const img = document.createElement("img");
+                img.src = `images/${year}/${location}/${filename}`;
+                img.alt = filename;
+                img.addEventListener("click", () => openModal(img.src, filename));
+
+                imageContainer.appendChild(img);
+            });
+        })
+        .catch(error => {
+            console.error("Error loading images:", error);
+            imageContainer.innerHTML = "<p>Error loading images.</p>";
+        });
+}
+
+/**
+ * Opens a modal to display the full-size image.
+ * @param {string} src - Image source URL.
+ * @param {string} alt - Image description.
+ */
+function openModal(src, alt) {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalCaption = document.getElementById("modalCaption");
+
+    modal.style.display = "flex";
+    modalImage.src = src;
+    modalCaption.innerText = alt;
 }
