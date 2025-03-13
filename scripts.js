@@ -1,9 +1,8 @@
 // Object for images organized by year and subfolder
 const imagesByYearAndSubfolder = {
     "2017": {
-        "Wales": [
-            'images/2017/Wales/photo1.jpg',
-            'images/2017/Wales/photo2.jpg'
+        "3 Peaks": [
+            'images/2017/3 Peaks/photo1.jpg',
         ],
         "UK": [
             'images/2017/UK/photo1.jpg',
