@@ -14,11 +14,11 @@ const imagesByYearAndSubfolder = {
         ]
     },
     "2019": {
-        "Helvellyn": [
+        "Paterdale - Helvellyn": [
             'images/2019/Helvellyn/walk1.jpg',
             'images/2019/Helvellyn/walk1-2.jpg',
         ],
-        "Old Man": [
+        "Coniston Old Man": [
             'images/2019/Old Man/walk1.jpg',
             'images/2019/Old Man/walk1-2.jpg',
         ]
