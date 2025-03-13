@@ -9,8 +9,8 @@ const imagesByYearAndSubfolder = {
         "Not Sure": [
             'images/2018/Not Sure/walk1.jpg'
         ],
-        "Paterdale - St Sundays Craig & Fairfield": [
-            'images/2018/Paterdale - St Sundays Craig & Fairfield/walk1.jpg'
+        "Paterdale": [
+            'images/2018/Paterdale/walk1.jpg'
         ]
     },
     "2019": {
