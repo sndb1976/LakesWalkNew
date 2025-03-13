@@ -7,20 +7,20 @@ const imagesByYearAndSubfolder = {
     },
     "2018": {
         "Not Sure": [
-            'images/2018/Not Sure/walk1.jpg'
+            'images/2018/Not Sure/walk1.jpg',
         ],
         "Paterdale": [
-            'images/2018/Paterdale/walk1.jpg'
+            'images/2018/Paterdale/walk1.jpg',
         ]
     },
     "2019": {
-        "Helvellyn": [
+        "Paterdale Helvellyn": [
             'images/2019/Helvellyn/walk1.jpg',
             'images/2019/Helvellyn/walk1-2.jpg'
         ],
-        "Old Man": [
+        "Coniston Old Man": [
             'images/2019/Old Man/walk1.jpg',
-            'images/2019/Old Man/walk1-2.jpg'
+            'images/2019/Old Man/walk1-2.jpg',
         ]
     },
     // Add other years similarly
