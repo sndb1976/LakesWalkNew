@@ -107,6 +107,18 @@ header h1 {
 .walk-images img:hover {
     transform: scale(1.05);
 }
+/* Styling for single image in the right pane */
+.single-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.single-image:hover {
+    transform: scale(1.05);  /* Slight zoom effect on hover */
+}
 
 /* Modal */
 .modal {
