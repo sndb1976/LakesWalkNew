@@ -2,21 +2,15 @@
 const imagesByYearAndSubfolder = {
     "2017": {
         "3 Peaks": [
-            'images/2017/3 Peaks/photo1.jpg',
-        ],
-        "UK": [
-            'images/2017/UK/photo1.jpg',
-            'images/2017/UK/photo2.jpg'
+            'images/2017/3 Peaks/walk1.jpg'
         ]
     },
     "2018": {
-        "Wales": [
-            'images/2018/Wales/photo1.jpg',
-            'images/2018/Wales/photo2.jpg'
+        "Not Sure": [
+            'images/2018/Not Sure/walk1.jpg'
         ],
-        "UK": [
-            'images/2018/UK/photo1.jpg',
-            'images/2018/UK/photo2.jpg'
+        "Paterdale - St Sundays Craig & Fairfield": [
+            'images/2018/Paterdale - St Sundays Craig & Fairfield/walk1.jpg'
         ]
     },
     "2019": {
